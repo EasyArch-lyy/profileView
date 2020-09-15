@@ -1,0 +1,61 @@
+@import "~dtd/lib/style/themes/default.less";
+
+.productSelect {
+  &:focus {
+    outline: none;
+  }
+  :global .dt-select-selection {
+    height: 50px;
+    background: #1e2b38;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    &:focus, &:active {
+      box-shadow: none;
+      outline: none;
+    }
+    .dt-select-selection__rendered {
+      line-height: 50px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .dt-select-arrow {
+      color: #fff;
+    }
+  }
+}
+
+.productSelectDropdown {
+  margin-top: -8px;
+  border-radius: 0;
+  :global .dt-select-dropdown-menu {
+    background: #12202e;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #12202e;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      // display: none;
+      background: #1e2b38;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #1e2b38;
+    }
+    &::-webkit-scrollbar-corner {
+      background: #1e2b38;
+    }
+    .dt-select-dropdown-menu-item {
+      color: #fff;
+      &:hover, &.dt-select-dropdown-menu-item-selected {
+        background: #1e2b38;
+        color: #fff;
+      }
+    }
+  }
+}

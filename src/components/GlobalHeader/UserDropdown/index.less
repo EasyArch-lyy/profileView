@@ -1,0 +1,56 @@
+@import "~dtd/lib/style/themes/default.less";
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+  :global(.ant-dropdown-menu-item) {
+    width: 160px;
+  }
+}
+
+.curDeptId {
+  margin-left: 10px;
+}
+
+.user {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .avatar {
+    margin: 20px 8px 20px 0;
+    color: @primary-color;
+    background: url("../../../assets/icon-user.png") no-repeat center center/18px 18px;
+    vertical-align: middle;
+  }
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #AAB1B7;
+  span {
+    line-height: 130%;
+  }
+}
+
+.name {
+}
+
+@media only screen and (max-width: @screen-md) {
+  .account {
+    .avatar {
+      margin-right: 0;
+    }
+  }
+
+  .name {
+    display: none;
+  }
+}

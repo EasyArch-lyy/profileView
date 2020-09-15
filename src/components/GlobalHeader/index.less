@@ -1,0 +1,97 @@
+@import "~dtd/lib/style/themes/default.less";
+
+.header {
+  padding: 0 0 0 0;
+  background: #12202e;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+:global {
+  .ant-layout {
+    overflow-x: hidden;
+  }
+  .dt-layout-header {
+    line-height: 50px;
+  }
+}
+
+.logo {
+  height: 50px;
+  line-height: 48px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+  font-size: 20px;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.action {
+  cursor: pointer;
+  padding: 0 22px;
+  transition: all .3s;
+  border-left: 1px solid #aab1b7;
+  height: 50px;
+  > i {
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  &:hover,
+  &:global(.ant-popover-open) {
+    background: @primary-1;
+  }
+}
+
+.left {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.right {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: center;
+  .search {
+    padding: 0;
+    margin: 0 12px;
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    :global(.ant-divider-vertical) {
+      vertical-align: unset;
+    }
+    i.trigger {
+      padding: 0 12px;
+    }
+    .logo {
+      padding-right: 12px;
+      position: relative;
+    }
+    .right {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+.topTitle {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+  color: rgb(32, 45, 64);
+  display: inline;
+}
+
+.tableTrLine {
+  :global .dt-table-tbody > tr > td {
+    border-bottom: 1px solid #fff;
+  }
+  :global .dt-table-small {
+    border: 1px solid #fff;
+  }
+  :global .dt-table-small.dt-table-bordered .dt-table-content {
+    border-right: 1px solid #fff;
+  }
+}
+
+.tableTrLineIconMaster {
+  color: #ffd94b;
+}
+
+.tableTrLineIconFolder {
+  color: #ffd94b;
+  margin: 0 8px;
+}
+
+.tableTrLineIconFile {
+  color: #93a0b5;
+  margin: 0 8px;
+}
+
+.caseCardTitle {
+  :global textarea.dt-input {
+    color: rgb(32, 45, 64);
+    font-size: 18px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 30;
+  }
+  :global .dt-input {
+    border: 1px solid #fff;
+  }
+  :global .dt-input {
+    background-color: #fff;
+    color: #666;
+    cursor: auto;
+  }
+}
+
+.caseCardDivider {
+  :global .dt-divider-horizontal {
+    margin: 16px 0 0;
+  }
+}
+.caseCardProps {
+  margin: 10px 13px 0;
+}
+.caseCardPropTitle {
+  padding-right: 5px;
+  color: rgb(96, 108, 128);
+  line-height: 32px;
+  max-width: 50px;
+}
+.caseCardPropRowLeft {
+  margin-top: 14px;
+}
+.caseCardPropRow {
+  margin: 10px 0 0 16px;
+}
+.caseCardPropTitleRight {
+  font-size: 14px;
+  color: rgb(32, 45, 64);
+  font-weight: bold;
+}
+.caseCardPropTitleLeft {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(32, 45, 64);
+  margin-top: 24px;
+  margin-bottom: 7px;
+  position: relative;
+  font-weight: bold;
+  padding-left: 13px;
+}
+.caseCardRightDivider {
+  border-right: 1px solid #d4d1d1;
+  margin: 0 5px;
+  padding-right: 10px;
+}
+.caseCardPropText {
+  color: #0d31c5;
+}
+.caseCardPropTitleLeftText {
+  word-break: break-all;
+  :global .dt-input {
+    border: 1px solid #fff;
+  }
+  :global .dt-input-disabled {
+    background-color: #fff;
+    color: #666;
+    cursor: auto;
+  }
+}
+.caseCardProp {
+  margin-right: 5px;
+  :global .dt-select-selection {
+    border: 1px solid #fff;
+  }
+  :global .dt-select-disabled {
+    color: #666;
+  }
+  :global .dt-select-disabled .dt-select-selection {
+    background-color: #fff;
+    cursor: auto;
+  }
+  :global .dt-select-disabled .dt-select-selection:hover,
+  :global .dt-select-disabled .dt-select-selection:focus,
+  :global .dt-select-disabled .dt-select-selection:active {
+    border-color: #fff;
+  }
+}
+.tableBox {
+  overflow-y: auto;
+  flex: 1 1 auto;
+  height: 75vh;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.search {
+  padding: 0 24px 10px 16px;
+  .searchLine {
+    width: calc(25vw - 70);
+  }
+  :global .dt-select-selection {
+    border: 1px solid #fff;
+  }
+  :global .dt-btn {
+    border-color: #fff;
+  }
+}
+
+.caseBox {
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 0 0, rgba(0, 0, 0, 0.1) 0 2px 6px -1px;
+  .header {
+    height: 72px;
+    padding: 0 24px;
+    line-height: 72px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .search {
+    padding: 0 24px 10px 16px;
+    .searchLine {
+      width: calc(25vw - 70);
+    }
+    :global .dt-select-selection {
+      border: 1px solid #fff;
+    }
+    :global .dt-btn {
+      border-color: #fff;
+    }
+  }
+  .action {
+    padding: 10px 24px;
+    border-top: 1px solid #efefef;
+    height: 40px;
+    a {
+      float: right;
+    }
+  }
+  .actionTitle {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.caseCard {
+  margin-left: 20px;
+}
+
+.caseCardRightButton {
+  padding-left: 13px;
+  margin-top: 10px;
+  :global .dt-btn {
+    min-width: 96px;
+    margin-right: 8px;
+  }
+  :global .dt-btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(32, 45, 64);
+    box-shadow: rgba(32, 45, 64, 0.08) 0 1px 4px 0;
+    border-color: rgb(32, 45, 64);
+  }
+  :global .button-primary:hover {
+    box-shadow: rgba(19, 111, 220, 0.1) 0 1px 2px 0;
+    background: rgb(47, 68, 99);
+    border-color: rgb(47, 68, 99);
+  }
+}
+:global .checkedRow {
+  font-weight: bold;
+  background-color: #f4fafd;
+}
+.treeBox {
+  position: fixed;
+  border: 1px solid #f7f3f3;
+  width: 28%;
+}
+.treeRowActionIcon {
+  padding: 4px 5px;
+  color: rgb(145, 153, 163);
+}
+.treeRowActionIcon:hover {
+  background-color: rgba(0, 102, 255, 0.08);
+  color: rgb(0, 102, 255);
+}
+
+.tableTrLineActionBox a {
+  float: right;
+}
+.searchCard {
+  height: 154px;
+  :global .dt-form-item {
+    margin-bottom: 0;
+  }
+}
+.searchIcon {
+  float: right;
+  color: rgb(0, 102, 255);
+}
+.searchButton {
+  :global .dt-btn {
+    min-width: 96px;
+    margin-right: 8px;
+    float: right;
+  }
+  :global .dt-btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(32, 45, 64);
+    box-shadow: rgba(32, 45, 64, 0.08) 0 1px 4px 0;
+    border-color: rgb(32, 45, 64);
+  }
+  :global .button-primary:hover {
+    box-shadow: rgba(19, 111, 220, 0.1) 0 1px 2px 0;
+    background: rgb(47, 68, 99);
+    border-color: rgb(47, 68, 99);
+  }
+}
+.listTitleIcon i {
+  float: right;
+}
