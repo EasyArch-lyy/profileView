@@ -25,6 +25,9 @@
     "dva": "^2.1.0",
     "echarts": "^4.1.0",
     "echarts-for-react": "^2.0.13",
+    "eslint-config-umi": "^1.6.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "lodash": "^4.17.4",
     "lodash-decorators": "^4.4.1",
     "lodash.clonedeep": "^4.5.0",
@@ -59,8 +62,8 @@
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.0.1",
     "gh-pages": "^1.0.0",
-    "husky": "^0.14.3",
     "jest": "^21.0.1",
+    "less": "~3.9.0",
     "lint-staged": "^4.3.0",
     "mockjs": "^1.0.1-beta3",
     "prettier": "^1.9.0",
@@ -70,8 +73,7 @@
     "reta-cli": "1.1.2",
     "rollbar": "^2.3.1",
     "stylelint": "^8.1.0",
-    "stylelint-config-standard": "^17.0.0",
-    "less": "~3.9.0"
+    "stylelint-config-standard": "^17.0.0"
   },
   "babel": {
     "presets": [
