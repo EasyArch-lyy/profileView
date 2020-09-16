@@ -20,7 +20,7 @@ class profile extends Component {
       type: 'getProfile',
     });
   };
-// Error from chokidar (C:\): Error: EBUSY: resource busy or locked, lstat 'C:\hiberfil.sys'
+
   componentDidMount() {
     this.fetch();
   }

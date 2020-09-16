@@ -224,8 +224,6 @@ export function getRoutes(path, routerData) {
   let renderArr = [];
   renderArr.push(routes[0]);
   for (let i = 1; i < routes.length; i += 1) {
-    // console.log('renderArr:', renderArr)
-    // console.log('routes:', routes[i])
     let isAdd = false;
     isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3);
     renderArr = renderArr.filter(item => getRelation(item, routes[i]) !== 1);

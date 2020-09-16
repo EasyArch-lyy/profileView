@@ -52,10 +52,6 @@ export async function queryBasicProfile() {
   return request('/api/profile/basic');
 }
 
-export async function queryAdvancedProfile() {
-  return request('/api/profile/advanced');
-}
-
 export async function queryFakeList(params) {
   return request(`/api/fake_list?${stringify(params)}`);
 }
@@ -81,49 +77,3 @@ export async function accountLogin(params) {
     body: params,
   });
 }
-
-export async function getMouduleSketchListData(params) {
-  return request(`/vmp/module/projectModuleConfig/getJiraModuleAll?${stringify(params)}`);
-}
-
-export async function syncMouduleSketchListData(params) {
-  return request(`/vmp/module/projectModuleConfig/getModuleDataSync?${stringify(params)}`);
-}
-
-export async function syncMouduleJiraData() {
-  return request('/vmp/projectmodule/getJiraComponents');
-}
-
-export async function mouduleCreate(params) {
-  return request('/vmp/projectmodule/add', {
-    method: 'POST',
-    body: params,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-    },
-  });
-}
-
-export async function mouduleEdit(params) {
-  return request('/vmp/projectmodule/update', {
-    method: 'POST',
-    body: params,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-    },
-  });
-}
-
-export async function mouduleDelete(params) {
-  return request('/vmp/projectmodule/delete', {
-    method: 'POST',
-    body: {
-      id: params.id,
-      jira_component_id: params.jiraComponentId,
-    },
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-    },
-  });
-}
-

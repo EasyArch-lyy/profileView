@@ -2,15 +2,15 @@ import { message } from 'dtd';
 import { routerRedux } from 'dva/router';
 // import { getMenuData } from 'Common/menu';
 // import { getMenusWithUpdatedPath } from 'Common/originalDtpMenu';
-import { fakeDtpAccountLogin, dtpAccountLogout } from '../services/api';
+import { accountLogout } from '../services/api';
 import { setCookie } from '../utils/cookie';
 
 import {
   queryCurrent,
   getPasswd,
   getUsers,
-  delUser,
-  accountLogout
+  accountLogin,
+  delUser
 } from '../services/user';
 
 export default {
@@ -24,12 +24,12 @@ export default {
   },
 
   effects: {
-    * login({payload}, {call, put}) {
+    *login({payload}, {call, put}) {
       yield put({
         type: 'changeSubmitting',
         payload: true,
       });
-      const response = yield call(fakeDtpAccountLogin, payload);
+      const response = yield call(accountLogin, payload);
       yield put({
         type: 'changeLoginStatus',
         payload: response,

@@ -11,9 +11,45 @@ const { TabPane } = Tabs;
 }))
 @Form.create()
 export default class Login extends Component {
+  state = {
+    type: 'tyin',
+  }
 
   componentWillUnmount() {
     clearInterval(this.interval);
+  }
+
+  onSwitch = (type) => {
+    this.setState({ type });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFields({ force: true },
+      (err, values) => {
+        if (!err) {
+          this.props.dispatch({
+            type: 'login/login',
+            payload: {
+              ...values,
+              type: this.state.type,
+            },
+            // payload: values,
+          });
+        }
+      }
+    );
+  }
+
+  renderMessage = (message) => {
+    return (
+      <Alert
+        style={{ marginBottom: 24 }}
+        message={message}
+        type="error"
+        showIcon
+      />
+    );
   }
 
   render() {
@@ -22,19 +58,19 @@ export default class Login extends Component {
     const { type } = this.state;
     return (
       <div className={styles.main}>
-        <Form animated={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <Tabs animated={false} className={styles.tabs} activeKey={type} onChange={this.onSwitch}>
-            <TabPane tab="账号密码登录" key="account">
+            <TabPane tab="账号密码登录" key="tyin">
               {
                 login.status === 'error' &&
-                login.type === 'account' &&
+                login.type === 'tyin' &&
                 login.submitting === false &&
                 this.renderMessage('账号或密码错误')
               }
               <FormItem>
-                {getFieldDecorator('name', {
+                {getFieldDecorator('account', {
                   rules: [{
-                    required: type === 'account', message: '请输入账号',
+                    required: type === 'tyin', message: '请输入账号',
                   }],
                 })(
                   <Input
@@ -47,7 +83,7 @@ export default class Login extends Component {
               <FormItem>
                 {getFieldDecorator('passwd', {
                   rules: [{
-                    required: type === 'passwd', message: '请输入密码！',
+                    required: type === 'tyin', message: '请输入密码！',
                   }],
                 })(
                   <Input

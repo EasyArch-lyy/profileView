@@ -12,7 +12,7 @@ import GlobalFooter from '../components/GlobalFooter';
 import SiderMenu from '../components/SiderMenu';
 import NotFound from '../routes/Exception/404';
 import { getRoutes } from '../utils/utils';
-import { AuthorizedRoute, getFirstAuthorizedPath } from '../components/Auth';
+import { AuthorizedRoute } from '../components/Auth';
 
 const { Content } = Layout;
 

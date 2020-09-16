@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Route } from 'dva/router';
 import DocumentTitle from 'react-document-title';
 import { getPageTitle } from 'Common/router';
-import logo from 'Assets/logo.png';
+import logo from 'Assets/timg.jpg';
 import GlobalFooter from '../components/GlobalFooter';
 import styles from './UserLayout.less';
 import { getRoutes } from '../utils/utils';
@@ -17,8 +17,9 @@ class UserLayout extends React.PureComponent {
           <div className={styles.top}>
             <div className={styles.header}>
               <Link to="/">
+                {/*登录logo*/}
                 <img alt="logo" className={styles.logo} src={logo} />
-                <span className={styles.title}>DtDream</span>
+                <span className={styles.title}>Splendid</span>
               </Link>
             </div>
             <div className={styles.desc}>数据改变世界</div>

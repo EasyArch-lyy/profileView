@@ -26,6 +26,7 @@
     "echarts": "^4.1.0",
     "echarts-for-react": "^2.0.13",
     "eslint-config-umi": "^1.6.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-react-hooks": "^4.1.2",
     "lodash": "^4.17.4",

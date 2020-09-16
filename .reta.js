@@ -21,5 +21,5 @@ export default {
   "theme": "./src/theme.js",
   "hash": true,
   enableEslint: true,
-  PORT: 8899
+  PORT: 8081
 };

@@ -6,12 +6,19 @@ export async function query() {
 }
 
 // 查询当前用户
-export async function queryCurrent(params) {
-  return request(`/login/getUser?${stringify(params)}`);
+export async function queryCurrent() {
+  return request('/login/getUser/getloginuser');
 }
 
 export async function getPasswd(params) {
   return request(`/login/getPasswd?${stringify(params)}`)
+}
+
+export async function accountLogin(params) {
+  return request('/SPL/login/checkUserInfo', {
+    method: 'POST',
+    body: params,
+  });
 }
 
 export async function getUsers() {
@@ -28,3 +35,4 @@ export async function changeAuthority(params) {
     body: {},
   });
 }
+
