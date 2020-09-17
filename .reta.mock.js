@@ -1,11 +1,11 @@
 const proxy = {
   // 测试服务器
-  'POST /SPL': 'http://10.160.0.37:8001',
-  'GET /SPL': 'http://10.160.0.37:8001',
-  'PUT /SPL': 'http://10.160.0.37:8001',
-  'DELETE /SPL': 'http://10.160.0.37:8001',
-  '/api/session/*': 'http://192.168.1.100:8080',
-  '/user/login/*': 'http://10.160.0.37:8081',
+  'POST': 'http://10.160.0.37:8899',
+  'GET': 'http://10.160.0.37:8899',
+  'PUT': 'http://10.160.0.37:8899',
+  'DELETE': 'http://10.160.0.37:8899',
+  // '/api/session/*': 'http://192.168.1.100:8080',
+  // '/user/login/*': 'http://10.160.0.37:8899',
 }
 import { API_PATH } from './src/common/path'
 

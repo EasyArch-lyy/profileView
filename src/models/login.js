@@ -30,10 +30,6 @@ export default {
         payload: true,
       });
       const response = yield call(accountLogin, payload);
-      yield put({
-        type: 'changeLoginStatus',
-        payload: response,
-      });
       if (response === 'success') {
         setCookie('isLogin', true);
         yield put({

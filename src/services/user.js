@@ -15,7 +15,7 @@ export async function getPasswd(params) {
 }
 
 export async function accountLogin(params) {
-  return request('/SPL/login/checkUserInfo', {
+  return request('/login/checkUserInfo', {
     method: 'POST',
     body: params,
   });
