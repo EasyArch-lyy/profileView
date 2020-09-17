@@ -13,6 +13,16 @@ export async function queryRule(params) {
   return request(`/api/rule?${stringify(params)}`);
 }
 
+export async function accountLogin(params) {
+  return request('/login/account', {
+    method: 'POST',
+    body: params,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+  });
+}
+
 export async function removeRule(params) {
   return request('/api/rule', {
     method: 'POST',
@@ -71,9 +81,3 @@ export async function accountLogout() {
   return request('/login/logout');
 }
 
-export async function accountLogin(params) {
-  return request('/login/checkUserInfo', {
-    method: 'POST',
-    body: params,
-  });
-}

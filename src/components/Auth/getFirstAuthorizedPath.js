@@ -6,7 +6,7 @@ const noMatch = null;
 /**
  * 根据menu上的权限配置, 获取第一能有权限的路径
  * */
-export default function getFirstAuthorizedPath(productId) {
+export default function getFirstAuthorizedPath() {
   if (!store) return noMatch;
   const { user } = store.getState();
   if (!user) return noMatch;
@@ -27,7 +27,7 @@ export default function getFirstAuthorizedPath(productId) {
     return match;
   };
 
-  const menuList = getMenuData(productId);
+  const menuList = getMenuData();
 
   const res = findHasAuth(menuList);
 

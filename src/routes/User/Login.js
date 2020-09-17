@@ -32,9 +32,7 @@ export default class Login extends Component {
             type: 'login/login',
             payload: {
               ...values,
-              type: this.state.type,
             },
-            // payload: values,
           });
         }
       }

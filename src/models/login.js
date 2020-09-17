@@ -6,11 +6,9 @@ import { accountLogout } from '../services/api';
 import { setCookie } from '../utils/cookie';
 
 import {
-  queryCurrent,
-  getPasswd,
   getUsers,
   accountLogin,
-  delUser
+  queryCurrent,
 } from '../services/user';
 
 export default {
@@ -30,7 +28,7 @@ export default {
         payload: true,
       });
       const response = yield call(accountLogin, payload);
-      if (response === 'success') {
+      if (response === 'true') {
         setCookie('isLogin', true);
         yield put({
           type: 'changeLoginStatus',
@@ -51,6 +49,32 @@ export default {
           status: false,
         },
       });
+    },
+    *fetchCurrent({ callback = () => {} }, { call, put }) {
+      const response = yield call(queryCurrent);
+      if (JSON.parse(response).user) {
+        yield put({
+          type: 'changeLoginStatus',
+          payload: { status: true },
+        });
+        yield put({
+          type: 'saveCurrentUser',
+          payload: JSON.parse(response),
+        });
+        const data = {
+          name: JSON.parse(response).name,
+        };
+        // 初始化所有用户
+        yield put({
+          type: 'getUsers',
+          payload: {},
+        });
+      } else {
+        yield put({
+          type: 'changeLoginStatus',
+          payload: { status: false },
+        });
+      }
     },
     *getUsers(_, { call, put }) {
       const response = yield call(getUsers);

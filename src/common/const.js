@@ -4,7 +4,7 @@ export const Person = 2;
 export const Admin = 1;
 
 export const FOOT_INFO = {
-  copyright: '©2020 锦绣科技有限公司',
+  copyright: '©2020 xxxx',
   version: '配置管理平台 V1.0.0',
   // icp: 'ICP浙B2-XXXXXXXX',
   // phoneNumber: '0571-58110888',

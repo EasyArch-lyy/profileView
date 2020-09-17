@@ -10,7 +10,6 @@ const menuData = [
     name: '配置展示',
     icon: 'renzhengguanlicopy',
     path: 'showProfile',
-    pid: 'Y',
     authority: [PERMISSION.USER, PERMISSION.ADMIN],
   },
   {
@@ -48,27 +47,22 @@ function formatterFlat(menus) {
   return keys;
 }
 
-function formatter(data, parentPath = '', productId) {
+function formatter(data, parentPath = '') {
   let getState;
   let id;
-  if (productId) {
-    id = productId;
-  } else if (store && store.getState) {
-    getState = store.getState;
-  }
   const list = [];
   data.forEach((item) => {
     if (item.children) {
       list.push({
         ...item,
-        path: item.pid === 'Y' ? `/${id}/${parentPath}${item.path}` : `${parentPath}${item.path}`,
+        path: `/${parentPath}${item.path}`,
         children: formatter(item.children,
-          item.pid === 'Y' ? `/${id}/${parentPath}${item.path}/` : `${parentPath}${item.path}/`, productId),
+          `/${parentPath}${item.path}/`),
       });
     } else {
       list.push({
         ...item,
-        path: item.pid === 'Y' ? `/${id}/${parentPath}${item.path}` : `${parentPath}${item.path}`,
+        path: `/${parentPath}${item.path}`,
       });
     }
   });

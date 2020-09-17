@@ -12,7 +12,7 @@ import GlobalFooter from '../components/GlobalFooter';
 import SiderMenu from '../components/SiderMenu';
 import NotFound from '../routes/Exception/404';
 import { getRoutes } from '../utils/utils';
-import { AuthorizedRoute } from '../components/Auth';
+import { AuthorizedRoute, getFirstAuthorizedPath } from '../components/Auth';
 
 const { Content } = Layout;
 
@@ -61,6 +61,12 @@ class BasicLayout extends React.PureComponent {
   }
   fetch=() => {
     this.setState({ loading: true });
+    this.props.dispatch({ type: 'login/fetchCurrent' }).then(() => {
+      this.setState({
+        firstAuthorizedPath: getFirstAuthorizedPath(),
+        loading: false,
+      });
+    });
   }
   render() {
     const {

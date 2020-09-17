@@ -1,20 +1,13 @@
 const proxy = {
   // 测试服务器
-  'POST': 'http://10.160.0.37:8899',
-  'GET': 'http://10.160.0.37:8899',
-  'PUT': 'http://10.160.0.37:8899',
-  'DELETE': 'http://10.160.0.37:8899',
+  'POST /': 'http://10.160.0.37:2555',
+  'GET /': 'http://10.160.0.37:2555',
+  'PUT /': 'http://10.160.0.37:2555',
+  'DELETE /': 'http://10.160.0.37:2555',
   // '/api/session/*': 'http://192.168.1.100:8080',
-  // '/user/login/*': 'http://10.160.0.37:8899',
+  // '/api/user/*': 'http://127.0.1.1:8081'
 }
-import { API_PATH } from './src/common/path'
 
-import {
-  getAutoTestTaskInfoList,
-  getTableData,
-} from './mock';
-// nvocation failed Server returned invalid Response. java.lang.RuntimeException: Invocation failed Server returned invalid Response. at org.jetbrains.git4idea.http.GitAskPassXmlRpcClient.askUsername(GitAskPassXmlRpcClient.java:50) at org.jetbrains.git4idea.http.GitAskPassApp.main(GitAskPassApp.java:64) Caused by: java.io.IOException: Server returned invalid Response. at org.apache.xmlrpc.LiteXmlRpcTransport.sendRequest(LiteXmlRpcTransport.java:242) at org.apache.xmlrpc.LiteXmlRpcTransport.sendXmlRpc(LiteXmlRpcTransport.java:90) at org.apache.xmlrpc.XmlRpcClientWorker.execute(XmlRpcClientWorker.java:72) at org.apache.xmlrpc.XmlRpcClient.execute(XmlRpcClient.java:194) at org.apache.xmlrpc.XmlRpcClient.execute(XmlRpcClient.java:185) at org.apache.xmlrpc.XmlRpcClient.execute(XmlRpcClient.java:178) at org.jetbrains.git4idea.http.GitAskPassXmlRpcClient.askUsername(GitAskPassXmlRpcClient.java:47) ...
-// 1 more remote: No anonymous write access. Authentication failed for 'https://github.com/EasyArch-lyy/profileView.git/'
 const mock = {
 // 支持值为 Object 和 Array
 //   'GET /api/currentUser': {
