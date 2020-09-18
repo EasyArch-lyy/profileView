@@ -15,14 +15,14 @@ export default function getFirstAuthorizedPath() {
     let match = noMatch;
     for (let i = 0, len = list.length; len > i; i++) {
       const item = list[i];
-      if (check(item.authority)) {
+      // if (check(item.authority)) {
         if (item.children && item.children.length > 0) {
           match = findHasAuth(item.children);
         } else {
           match = `${item.path}`;
         }
         break;
-      }
+      // }
     }
     return match;
   };

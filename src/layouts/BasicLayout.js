@@ -61,7 +61,9 @@ class BasicLayout extends React.PureComponent {
   }
   fetch=() => {
     this.setState({ loading: true });
-    this.props.dispatch({ type: 'login/fetchCurrent' }).then(() => {
+    this.props.dispatch({
+      type: 'login/fetchCurrent',
+    }).then(() => {
       this.setState({
         firstAuthorizedPath: getFirstAuthorizedPath(),
         loading: false,

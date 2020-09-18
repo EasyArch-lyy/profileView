@@ -9,13 +9,13 @@ const menuData = [
   {
     name: '配置展示',
     icon: 'renzhengguanlicopy',
-    path: 'showProfile',
+    path: 'profile',
     authority: [PERMISSION.USER, PERMISSION.ADMIN],
   },
   {
     name: '系统管理',
     icon: 'configuration',
-    path: 'SystemManagement',
+    path: 'systemManagement',
     authority: [PERMISSION.USER, PERMISSION.ADMIN],
     children: [
       {
@@ -48,8 +48,6 @@ function formatterFlat(menus) {
 }
 
 function formatter(data, parentPath = '') {
-  let getState;
-  let id;
   const list = [];
   data.forEach((item) => {
     if (item.children) {

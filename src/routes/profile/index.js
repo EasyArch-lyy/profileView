@@ -17,7 +17,7 @@ class profile extends Component {
 
   fetch = () => {
     this.props.dispatch({
-      type: 'getProfile',
+      type: 'profile/getProfile',
     });
   };
 

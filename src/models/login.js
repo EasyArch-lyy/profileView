@@ -2,13 +2,13 @@ import { message } from 'dtd';
 import { routerRedux } from 'dva/router';
 // import { getMenuData } from 'Common/menu';
 // import { getMenusWithUpdatedPath } from 'Common/originalDtpMenu';
-import { accountLogout } from '../services/api';
 import { setCookie } from '../utils/cookie';
 
 import {
   getUsers,
   accountLogin,
   queryCurrent,
+  accountLogout,
 } from '../services/user';
 
 export default {
@@ -50,31 +50,26 @@ export default {
         },
       });
     },
-    *fetchCurrent({ callback = () => {} }, { call, put }) {
+    *fetchCurrent({ call, put }) {
       const response = yield call(queryCurrent);
-      if (JSON.parse(response).user) {
-        yield put({
-          type: 'changeLoginStatus',
-          payload: { status: true },
-        });
-        yield put({
-          type: 'saveCurrentUser',
-          payload: JSON.parse(response),
-        });
-        const data = {
-          name: JSON.parse(response).name,
-        };
-        // 初始化所有用户
-        yield put({
-          type: 'getUsers',
-          payload: {},
-        });
+      if (JSON.parse(response).account) {
+        console.log('获取到用户信息')
       } else {
-        yield put({
-          type: 'changeLoginStatus',
-          payload: { status: false },
-        });
+        console.log('用户未登录')
       }
+      yield put({
+        type: 'changeLoginStatus',
+        payload: {
+          status: true,
+        }
+      });
+      yield put({
+        type: 'saveCurrentUser',
+        payload: JSON.parse(response),
+      });
+      const data = {
+        name: JSON.parse(response).name,
+      };
     },
     *getUsers(_, { call, put }) {
       const response = yield call(getUsers);
@@ -92,8 +87,6 @@ export default {
       return {
         ...state,
         status: payload.status,
-        type: payload.type,
-        submitting: false,
       };
     },
     changeSubmitting(state, { payload }) {
